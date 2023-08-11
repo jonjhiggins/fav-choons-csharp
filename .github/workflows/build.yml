@@ -1,24 +1,33 @@
-name: dotnet package
+name: "fav-choons-csharp Build"
 
 on: [push]
 
+env:
+  AZURE_WEBAPP_NAME: fav-choons-csharp    
+  AZURE_WEBAPP_PACKAGE_PATH: './published' 
+  DOTNET_VERSION: '7.0.307'                
+
 jobs:
   build:
-
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        dotnet-version: [ '3.1.x', '6.0.x' ]
 
     steps:
       - uses: actions/checkout@v3
       - name: Setup .NET Core SDK ${{ matrix.dotnet-version }}
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: ${{ matrix.dotnet-version }}
+          dotnet-version: ${{ env.DOTNET_VERSION }}
       - name: Install dependencies
         run: dotnet restore
       - name: Build
         run: dotnet build --configuration Release --no-restore
       - name: Test
         run: dotnet test --no-restore --verbosity normal
+	  - name: Publish
+        run: dotnet publish -c Release -o '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}'
+	  - name: 'Deploy to Azure'
+        uses: azure/webapps-deploy@v2
+        with: 
+          app-name: ${{ env.AZURE_WEBAPP_NAME }}
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE  }} 
+          package: '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}'
