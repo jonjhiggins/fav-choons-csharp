@@ -1,28 +1,6 @@
 ﻿
 using Microsoft.EntityFrameworkCore;
 
-namespace fav_choons_csharp.Models
-{
-    public class Employees
-    {
-        public int Id { get; set; }
-        public string? Name { get; set; }
-        public string? Title { get; set; }
-    }
-}
-
-namespace PostgreSQL.Data
-{
-    public class Employee
-    {
-        public int Id { get; set; }
-        public string? Name { get; set; }
-        public string? Title { get; set; }
-    }
-}
-
-
-
 namespace PostgreSQL.Data
 {
     public class AppDbContext : DbContext
