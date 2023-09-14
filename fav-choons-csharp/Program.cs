@@ -34,13 +34,15 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+Console.WriteLine($"Host is: {app.Configuration.GetConnectionString("WebApiDatabase")}");
+
 
 // Run migrations - to be commented out
 // See https://medium.com/geekculture/ways-to-run-entity-framework-migrations-in-asp-net-core-6-37719993ddcb
 // for better solutions
-using var scope = app.Services.CreateScope();
+/* using var scope = app.Services.CreateScope();
 await using var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-await dbContext.Database.MigrateAsync();
+await dbContext.Database.MigrateAsync(); */
 
 
 app.Run();

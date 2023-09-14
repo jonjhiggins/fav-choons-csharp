@@ -2,7 +2,7 @@
 
 We forget our favourite music 🎵. Listening happens over multiple platforms making it hard to track. People enjoy the nostalgia of listening to their old music, but there isn’t a personalised way of doing this.
 
-Built using .net, entity framework, postgres
+Built using .net, entity framework, postgres. Hosted on Azure web app.
 
 ## Development
 
@@ -31,3 +31,5 @@ Built using .net, entity framework, postgres
 1. Make code chagnes
 2. Create a migration: `dotnet ef migrations add [MIGRATION_NAME]`
 3. Run the migration: `dotnet ef database update`
+
+Currently migrations don't run in CI as it would need GitHub to be able to connect to the Azure Postgres db. There is a commented out block in Program.cs for migrations 🙈
