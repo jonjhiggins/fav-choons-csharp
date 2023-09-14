@@ -1,0 +1,33 @@
+﻿@model fav_choons_csharp.Data.Models.AppUser
+
+@{
+    ViewData["Title"] = "New user created";
+}
+
+<div class="container">
+    <h1>User details</h1>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Username)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Username)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Entries)
+        </dt>
+        <dd class="col-sm-10">
+            <!-- todo -->
+        </dd>
+    </dl>
+
+    <a asp-action="Index">Back to all users</a>
+
+</div>
