@@ -22,7 +22,9 @@ jobs:
       - name: Build
         run: dotnet build --configuration Release --no-restore
       - name: Update database
-        run: dotnet ef database update
+        run: |
+            dotnet tool install --global dotnet-ef
+            dotnet ef database update --project fav-choons-csharp
       - name: Test
         run: dotnet test --no-restore --verbosity normal
       - name: Publish
