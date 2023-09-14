@@ -7,8 +7,8 @@ namespace fav_choons_csharp.Data.Models
         [Required]
         public int Id { get; set; }
         [Required]
-        public List<Track> Tracks { get; set; }
+        public required List<Track> Tracks { get; set; }
         [Required]
-        public DateTime Date { get; set; }
+        public required DateTime Date { get; set; }
     }
 }

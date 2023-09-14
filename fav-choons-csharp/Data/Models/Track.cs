@@ -7,8 +7,8 @@ namespace fav_choons_csharp.Data.Models
         [Required]
         public int Id { get; set; }
         [Required]
-        public string Name { get; set; }
+        public required string Name { get; set; }
         [Required]
-        public Artist Artist { get; set; }
+        public required Artist Artist { get; set; }
     }
 }
