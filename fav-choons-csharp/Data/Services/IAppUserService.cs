@@ -6,7 +6,7 @@ namespace fav_choons_csharp.Data.Services
     {
         IEnumerable<AppUser> GetAll();
         AppUser Add(AppUser newAppUser);
-        AppUser GetById(Guid id);
+        AppUser? GetById(Guid id);
         void Remove(Guid id);
     }
 }

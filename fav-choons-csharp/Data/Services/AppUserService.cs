@@ -22,7 +22,7 @@ namespace fav_choons_csharp.Data.Services
             return newAppUser;
         }
 
-        public AppUser GetById(Guid id) => _context.AppUsers.FirstOrDefault(a => a.Id == id);
+        public AppUser? GetById(Guid id) => _context.AppUsers.FirstOrDefault(a => a.Id == id);
 
         public void Remove(Guid id)
         {

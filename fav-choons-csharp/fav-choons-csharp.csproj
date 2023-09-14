@@ -33,6 +33,7 @@
     <None Remove="Views\Home\" />
     <None Remove="Views\User\" />
     <None Remove="Views\Shared\" />
+    <None Remove="Migrations\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />
@@ -43,5 +44,6 @@
     <Folder Include="Views\Home\" />
     <Folder Include="Views\User\" />
     <Folder Include="Views\Shared\" />
+    <Folder Include="Migrations\" />
   </ItemGroup>
 </Project>

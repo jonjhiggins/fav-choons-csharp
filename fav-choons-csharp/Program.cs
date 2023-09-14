@@ -1,6 +1,7 @@
 ﻿using System.Reflection.Metadata;
 using FavChoonsLibrary;
 using fav_choons_csharp.Data;
+using fav_choons_csharp.Data.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 ConfigurationManager configurationManager = builder.Configuration;
@@ -8,6 +9,7 @@ ConfigurationManager configurationManager = builder.Configuration;
 
 // Add services to the container.
 builder.Services.AddDbContext<AppDbContext>();
+builder.Services.AddTransient<IAppUserService, AppUserService>();
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
