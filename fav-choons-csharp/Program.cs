@@ -1,9 +1,14 @@
-﻿using FavChoonsLibrary;
+﻿using System.Reflection.Metadata;
+using FavChoonsLibrary;
+using fav_choons_csharp.Data;
 
 var builder = WebApplication.CreateBuilder(args);
+ConfigurationManager configurationManager = builder.Configuration;
+
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddDbContext<AppDbContext>();
 
 var app = builder.Build();
 

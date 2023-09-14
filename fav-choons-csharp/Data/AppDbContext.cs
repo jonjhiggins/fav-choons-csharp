@@ -1,7 +1,8 @@
 ﻿
 using Microsoft.EntityFrameworkCore;
+using fav_choons_csharp.Data.Models;
 
-namespace PostgreSQL.Data
+namespace fav_choons_csharp.Data
 {
     public class AppDbContext : DbContext
     {
