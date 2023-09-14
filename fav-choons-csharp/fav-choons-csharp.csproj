@@ -10,6 +10,7 @@
 
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'dotnet' " />
   <ItemGroup>
     <ProjectReference Include="..\FavChoonsLibrary\FavChoonsLibrary.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
@@ -25,10 +26,22 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="Data\" />
-    <None Remove="Classes\" />
+    <None Remove="Controllers\" />
+    <None Remove="Data\Services\" />
+    <None Remove="Data\Models\" />
+    <None Remove="Views\" />
+    <None Remove="Views\Home\" />
+    <None Remove="Views\User\" />
+    <None Remove="Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />
-    <Folder Include="Classes\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="Data\Services\" />
+    <Folder Include="Data\Models\" />
+    <Folder Include="Views\" />
+    <Folder Include="Views\Home\" />
+    <Folder Include="Views\User\" />
+    <Folder Include="Views\Shared\" />
   </ItemGroup>
 </Project>
